@@ -1,0 +1,10 @@
+Explain RAG
+What are chatbots?
+Explain about AI Ethics
+How does FAISS help in similarity search?
+Describe AI applications in healthcare
+What is the role of automation tools like N8N in workflows?
+Who won the Nobel Prize in Physics 2024?
+Current price of Tesla stock
+What are some popular Python libraries for NLP?
+Upcoming AI conferences worldwide

@@ -1,0 +1,112 @@
+[
+    {
+        "query": "Explain RAG",
+        "answer": "RAG can be applied in multiple domains, including customer support, research summarization, healthcare, and finance. It enables AI agents to answer queries about domain-specific documents, such as reports, papers, or knowledge articles. By combining retrieval and generation, RAG systems offer both flexibility and reliability.\n\nAdvantages of RAG include improved factual accuracy, scalability to large knowledge bases, and the ability to update knowledge dynamically without retraining the model....",
+        "reasoning_trace": {
+            "prompt_version": "v2",
+            "used": "KB",
+            "decision_text": "action: kb"
+        },
+        "latency": 4.850298643112183,
+        "tool_latency": null
+    },
+    {
+        "query": "What are chatbots?",
+        "answer": "Chatbots are AI-powered programs designed to simulate human conversation and assist users with tasks or information. They are widely used in customer support, e-commerce, healthcare, education, and entertainment. Chatbots can operate through messaging platforms, websites, or voice interfaces, providing instant responses to user queries and automating repetitive interactions.\n\nModern chatbots leverage Natural Language Processing (NLP) to understand user intent, extract entities, and generate...",
+        "reasoning_trace": {
+            "prompt_version": "v2",
+            "used": "KB",
+            "decision_text": "action: kb"
+        },
+        "latency": 2.7870261669158936,
+        "tool_latency": null
+    },
+    {
+        "query": "Explain about AI Ethics",
+        "answer": "AI Ethics is a critical field that addresses the responsible development and deployment of artificial intelligence. Key principles include fairness, transparency, accountability, privacy, and avoiding bias in AI systems. Ensuring that AI models do not discriminate against individuals or groups is essential for trust and societal acceptance.\n\nTransparency involves explaining AI decisions in a way humans can understand. Accountability ensures that developers and organizations take responsibility...",
+        "reasoning_trace": {
+            "prompt_version": "v2",
+            "used": "KB",
+            "decision_text": "action: kb"
+        },
+        "latency": 3.3738651275634766,
+        "tool_latency": null
+    },
+    {
+        "query": "How does FAISS help in similarity search?",
+        "answer": "Faiss is an open-source library designed for efficient similarity search and clustering of dense vectors, enabling applications like recommendation systems and image search. Faiss, short for Facebook AI Similarity Search, is an open-source library built for similarity search and clustering of dense vectors. These methods help Faiss organize and retrieve vectors efficiently, ensuring similarity searches are quick and accurate. Faiss also powers search engines that retrieve visually similar...",
+        "reasoning_trace": {
+            "prompt_version": "v2",
+            "used": "Tavily",
+            "decision_text": "action: tavily"
+        },
+        "latency": 5.209009647369385,
+        "tool_latency": 2.369060754776001
+    },
+    {
+        "query": "Describe AI applications in healthcare",
+        "answer": "AI is revolutionizing healthcare by improving diagnostics, patient monitoring, drug discovery, and administrative workflows. Machine learning algorithms analyze medical images, electronic health records, and clinical data to support doctors in making accurate diagnoses and treatment plans. Predictive models can anticipate disease progression, allowing early intervention and personalized care.\n\nNatural language processing (NLP) helps summarize patient notes, extract relevant insights, and...",
+        "reasoning_trace": {
+            "prompt_version": "v2",
+            "used": "KB",
+            "decision_text": "action: kb"
+        },
+        "latency": 3.1979715824127197,
+        "tool_latency": null
+    },
+    {
+        "query": "What is the role of automation tools like N8N in workflows?",
+        "answer": "Automation tools like N8N, Make.com, and Zapier enable users to integrate multiple applications and automate workflows without extensive coding knowledge. They help organizations automate repetitive tasks such as data entry, notifications, report generation, and email handling. By connecting APIs, databases, and apps, these tools streamline business operations and reduce human error.\n\nN8N is an open-source workflow automation tool that provides a visual interface to create complex workflows....",
+        "reasoning_trace": {
+            "prompt_version": "v2",
+            "used": "KB",
+            "decision_text": "action: kb"
+        },
+        "latency": 3.377958059310913,
+        "tool_latency": null
+    },
+    {
+        "query": "Who won the Nobel Prize in Physics 2024?",
+        "answer": "Skip to content  # Nobel Prize in Physics 2024 > The Nobel Prize in Physics 2024 was awarded jointly to John J. Hopfield and Geoffrey Hinton \"for foundational discoveries and inventions that enable machine learning with artificial neural networks\" ### Nobel Prize announcements 2025 ## Six days, six prizes This year’s Nobel Prize announcements will take place 6–13 October. All announcements will be streamed live here on nobelprize.org. See the full schedule ### Explore prizes and laureates Look...",
+        "reasoning_trace": {
+            "prompt_version": "v2",
+            "used": "Tavily",
+            "decision_text": "action: tavily"
+        },
+        "latency": 5.509877443313599,
+        "tool_latency": 2.6470727920532227
+    },
+    {
+        "query": "Current price of Tesla stock",
+        "answer": "The current price of TSLA is 440.40 USD — it has increased by 2.31% in the past 24 hours. Watch Tesla, Inc. stock price performance more closely on the chart. Common Stock (TSLA) stock price today is $439.89, reflecting a +3.89% move since the market opened. The company's market capitalization stands at $1.46T, with a The current price of TSLA is ‎$‎440.40. What is Tesla Motors, Inc.'s stock future price target? +.",
+        "reasoning_trace": {
+            "prompt_version": "v2",
+            "used": "Tavily",
+            "decision_text": "action: tavily"
+        },
+        "latency": 4.311624526977539,
+        "tool_latency": 1.8801236152648926
+    },
+    {
+        "query": "What are some popular Python libraries for NLP?",
+        "answer": "Natural Language Processing (NLP) is a branch of AI that focuses on the interaction between computers and human language. NLP enables machines to read, understand, and generate human language, supporting applications like chatbots, translation, sentiment analysis, and content summarization. Popular Python libraries for NLP include NLTK, SpaCy, Hugging Face Transformers, and Gensim.\n\nTokenization, part-of-speech tagging, named entity recognition, and sentiment analysis are common NLP tasks....",
+        "reasoning_trace": {
+            "prompt_version": "v2",
+            "used": "KB",
+            "decision_text": "action: kb"
+        },
+        "latency": 2.5806500911712646,
+        "tool_latency": null
+    },
+    {
+        "query": "Upcoming AI conferences worldwide",
+        "answer": "Top AI & ML Conferences to attend in 2025 & 2026 ;TechEx Europe. Sep 24-25. Amsterdam, Netherlands; GAI World 2025. Sep 24-25. Boston, MA ; MLCon New York. Sep Global Summit 2025; 22 September 2025 · 16:00 - 17:00 · AI for early warnings addressing floods and droughts ; 23 September 2025 · 17:00 - 18:00 · AI for climate 1. Radar AI Edition· 2. The AI Conference San Francisco · 3. SuperAI · 4. Data + AI Summit · 5. The AI Summit London · 6. CDAO Government · 7. Ai4 2025 · 8. Coalesce.",
+        "reasoning_trace": {
+            "prompt_version": "v2",
+            "used": "Tavily",
+            "decision_text": "action: tavily"
+        },
+        "latency": 5.269407033920288,
+        "tool_latency": 2.2488083839416504
+    }
+]
