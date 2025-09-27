@@ -1,0 +1,9 @@
+openai
+tavily
+python-dotenv
+langchain-openai
+langchain-community
+faiss-cpu
+
+
+# pip install openai tavily langchain langchain-openai langchain-community faiss-cpu python-dotenv
