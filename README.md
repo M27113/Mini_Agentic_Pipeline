@@ -59,8 +59,9 @@ mini_agentic_pipeline/
 │   ├─ actor.py              # Tool integration (Tavily API)
 │   └─ controller.py         # Orchestrates the pipeline
 ├─ answers_trace.json        # Step-by-step trace log
-├─ answers.txt               # Final answers per query
+├─ answers.txt               # Final answers per query        
 ├─ evaluation.md             # Automated evaluation report
+├─ generate_eval.py  
 ├─ main.py                   # Entry point for running queries
 ├─ requirements.txt          # Python dependencies
 ├─ .env                      # API keys (OpenAI, Tavily)
@@ -86,36 +87,48 @@ pip install -r requirements.txt
 ```
 3. **Configure API keys 🔑**
 
-Create a .env file:
-```bash
-OPENAI_API_KEY=<your_openai_api_key>
-TAVILY_API_KEY=<your_tavily_api_key>
-```
+    Create a .env file:
+  ```bash
+  OPENAI_API_KEY=<your_openai_api_key>
+  TAVILY_API_KEY=<your_tavily_api_key>
+  ```
 4. **Add KB documents 📚**
-   
-```bash
-Place 8–20 .txt files in kb_docs/.
-```
-5.  **Add custom queries and prompt versions**
 
-```bash
-Place 8–10 queries in queries.txt
-And place prompt versions v1,v2.. as .txt files in promots
-```
-  
-6. **Run the pipeline**
+    Place 8–20 .txt files in kb_docs/.
 
-Default queries:
+5. **Add test queries in queries.txt**.
 
-```bash
-python main.py
-```
+    (1 query per line, 10 queries recommended)
+    Place 8–10 queries in queries.txt
 
-Using a custom queries file and prompt version:
-```bash
-python main.py --queries-file queries.txt --prompt-version v2
-```
+6. **Add prompts**
 
+    And place prompt versions v1,v2.. as .txt files in promots
+
+7. **Run the pipeline**
+
+    i) Default queries:
+
+    ```bash
+    python main.py
+    ```
+
+    ii) Using a custom queries file and prompt version:
+    
+    ```bash
+    python main.py --queries-file queries.txt --prompt-version v2
+    ```
+    --- queries-file: Path to your queries file.
+    
+    --- prompt-version: Choose between v1 (basic) or v2 (expert) prompt.
+    
+    **output**:
+    
+    --- answers.txt – readable answers per query.
+    
+    --- answers_trace.json – full JSON with reasoning trace, action decisions, and latencies.
+
+---
 ## 🛠️ Design Decisions
 
 1. **Modular architecture**: Retriever, Reasoner, Actor, Controller separated for maintainability.
@@ -130,7 +143,21 @@ python main.py --queries-file queries.txt --prompt-version v2
 
 6. **Agentic Behavior**: Decisions made dynamically per query, no fixed thresholds.
 
+---
+## 📊 Evaluation
 
+1. Queries tested: 10 queries covering RAG, embeddings, FAISS, ML basics, chatbots, AI applications.
+
+2. Metrics captured:
+
+    -- overall_latency
+
+    -- tool_latency
+
+    -- decision_text (action chosen)
+
+3. All metrics are stored in answers_trace.json for grading.
+---
 ## 🖥️ Demo Output
 
 ### Test Queries & Results
@@ -183,6 +210,7 @@ python main.py --queries-file queries.txt --prompt-version v2
         "tool_latency": 2.369060754776001
     }
 ```
+---
 ## ⚠️ Known Limitations
 
 -- External API dependency: Tavily API must be accessible; network failures are not retried automatically.
@@ -193,6 +221,7 @@ python main.py --queries-file queries.txt --prompt-version v2
 
 -- No caching: Tool results are fetched on every run; caching could reduce latency.
 
+---
 ## 🚀 Future Enhancements
 
 -- Add unit tests for Retriever and Reasoner.
@@ -202,3 +231,5 @@ python main.py --queries-file queries.txt --prompt-version v2
 -- Extend to multiple tools (CSV lookup, REST API).
 
 -- Interactive CLI for live queries and optional debugging.
+
+---
