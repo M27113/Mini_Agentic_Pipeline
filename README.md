@@ -158,39 +158,31 @@ These choices were made to keep the pipeline **simple, explainable, and extensib
 ## 🖥️ Demo Output
 
 **Files Generated:**  
-- 📄 [answers.txt](answers.txt) – readable answers per query  
-- 📝 [answers_trace.json](answers_trace.json) – raw logs with reasoning, tool calls, and latencies  
+- 📄 [answers.txt](answers.txt) – file contains truncated, human-readable answers for each query 
+- 📝 [answers_trace.json](answers_trace.json) – raw logs with full reasoning trace, tool calls,action decisions, and latencies  
 - 📊 [evaluation.md](evaluation.md) – summarized tables for easy grading
 
 ### Test Queries & Results
 
-> Full evaluation is summarized in [evaluation.md](evaluation.md).
+**answers.txt:**
+> The following snippet shows shows entries from [answers.txt](answers.txt)
+```bash
+--- Query 1: Explain RAG ---
+Answer: RAG can be applied in multiple domains, including customer support, research summarization, healthcare, and finance. It enables AI agents to answer queries about domain-specific documents, such as reports, papers, or knowledge articles. By combining retrieval and generation, RAG systems offer both flexibility and reliability...
 
-| Query                                                       | Decision Text    | Source Used | Latency (s) | Tool Latency (s) |
-|-------------------------------------------------------------|------------------|-------------|-------------|------------------|
-| Explain RAG                                                 | `action: kb`     | KB          | 4.85        | -                |
-| What are chatbots?                                          | `action: kb`     | KB          | 2.79        | -                |
-| Explain about AI Ethics                                     | `action: kb`     | KB          | 3.37        | -                |
-| How does FAISS help in similarity search?                   | `action: tavily` | Tavily      | 5.21        | 2.37             |
-| Describe AI applications in healthcare                      | `action: kb`     | KB          | 3.20        | -                |
-| What is the role of automation tools like N8N in workflows? | `action: kb`     | KB          | 3.38        | -                |
-| Who won the Nobel Prize in Physics 2024?                    | `action: tavily` | Tavily      | 5.51        | 2.65             |
-| Current price of Tesla stock                                | `action: tavily` | Tavily      | 4.31        | 1.88             |
-| What are some popular Python libraries for NLP?             | `action: kb`     | KB          | 2.58        | -                |
-| Upcoming AI conferences worldwide                           | `action: tavily` | Tavily      | 5.27        | 2.25             |
+(used: KB, latency: 4.85s)
 
----
+--- Query 2: What are chatbots? ---
+Answer: Chatbots are AI systems designed to interact with users through text or voice. They can answer FAQs, assist with customer support, and integrate with workflows. Advanced chatbots leverage LLMs to provide context-aware responses...
 
-### Latency Summary
-- **Average Latency:** 4.05s
-- **Average Tool Latency:** 2.29s
-- **KB Used:** 6 times
-- **Web Search Used:** 4 times
+(used: KB, latency: 2.79s)
 
----
-### Step-by-step trace (from answers_trace.json):
+...
 
-> The following snippet shows example entries from [answers_trace.json](answers_trace.json) (raw logs).
+```
+**Step-by-step trace (from answers_trace.json):**
+
+> The following snippet shows entries from [answers_trace.json](answers_trace.json) (raw logs).
 
 ```bash
     {
@@ -215,8 +207,34 @@ These choices were made to keep the pipeline **simple, explainable, and extensib
         "latency": 5.209009647369385,
         "tool_latency": 2.369060754776001
     }
+    ...
 ```
 ---
+> Full evaluation is summarized in [evaluation.md](evaluation.md).
+
+| Query                                                       | Decision Text    | Source Used | Latency (s) | Tool Latency (s) |
+|-------------------------------------------------------------|------------------|-------------|-------------|------------------|
+| Explain RAG                                                 | `action: kb`     | KB          | 5.78        | -                |
+| What are chatbots?                                          | `action: kb`     | KB          | 4.95        | -                |
+| Explain about AI Ethics                                     | `action: kb`     | KB          | 5.66        | -                |
+| How does FAISS help in similarity search?                   | `action: tavily` | Tavily      | 5.04        | 2.05             |
+| Describe AI applications in healthcare                      | `action: kb`     | KB          | 4.22        | -                |
+| What is the role of automation tools like N8N in workflows? | `action: kb`     | KB          | 2.95        | -                |
+| Who won the Nobel Prize in Physics 2024?                    | `action: tavily` | Tavily      | 5.63        | 2.64             |
+| Current price of Tesla stock                                | `action: tavily` | Tavily      | 5.09        | 2.47             |
+| What are some popular Python libraries for NLP?             | `action: kb`     | KB          | 3.91        | -                |
+| Upcoming AI conferences worldwide                           | `action: tavily` | Tavily      | 5.14        | 1.99             |
+
+---
+
+### Latency Summary
+- **Average Latency:** 4.84s
+- **Average Tool Latency:** 2.29s
+- **KB Used:** 6 times
+- **Web Search Used:** 4 times
+
+---
+
 ## ⚠️ Known Limitations
 - 🌐 **External API dependency** → Tavily API must be accessible; network failures are not retried automatically.  
 - 📚 **Limited KB size** → Optimized for a small knowledge base (8–20 documents).  
