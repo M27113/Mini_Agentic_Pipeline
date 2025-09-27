@@ -1,0 +1,6 @@
+Natural Language Processing (NLP) is a branch of AI that focuses on the interaction between computers and human language. NLP enables machines to read, understand, and generate human language, supporting applications like chatbots, translation, sentiment analysis, and content summarization. Popular Python libraries for NLP include NLTK, SpaCy, Hugging Face Transformers, and Gensim.
+
+Tokenization, part-of-speech tagging, named entity recognition, and sentiment analysis are common NLP tasks. Machine learning and deep learning models, such as BERT and GPT, allow for advanced language understanding and generation. Text preprocessing, including cleaning, lemmatization, and stopword removal, ensures high-quality input for models.
+
+NLP is widely used in industries like customer support, healthcare, marketing, and finance. Applications include automated email responses, summarizing large documents, extracting insights from social media, and powering virtual assistants. Combining NLP with other AI techniques enhances the capabilities of intelligent systems and enables real-time, context-aware decision-making.
+

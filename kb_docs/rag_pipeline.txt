@@ -1,0 +1,7 @@
+Retrieval-Augmented Generation (RAG) is a method that combines information retrieval with large language models (LLMs) to improve the accuracy and relevance of generated responses. Instead of relying solely on the knowledge encoded in the LLM, RAG retrieves relevant documents or data from a knowledge base (KB) and uses this context to generate informed answers.
+
+The RAG workflow typically involves two main components: a retriever and a generator. The retriever searches a set of documents, vector embeddings, or a database to find content relevant to the user’s query. These retrieved documents are then passed to the generator, often an LLM, which reasons over the context and produces a concise, accurate response. This reduces hallucinations and ensures the output is grounded in real information.
+
+RAG can be applied in multiple domains, including customer support, research summarization, healthcare, and finance. It enables AI agents to answer queries about domain-specific documents, such as reports, papers, or knowledge articles. By combining retrieval and generation, RAG systems offer both flexibility and reliability.
+
+Advantages of RAG include improved factual accuracy, scalability to large knowledge bases, and the ability to update knowledge dynamically without retraining the model. Implementing RAG involves selecting an embedding model, designing a retrieval system, and integrating it with an LLM, creating an effective agentic system that reasons and retrieves in tandem.
