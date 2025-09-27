@@ -153,7 +153,7 @@ These choices were made to keep the pipeline **simple, explainable, and extensib
 
     - decision_text (action chosen)
 
-3. All raw metrics are stored in answers_trace.json, while evaluation.md presents them in human-readable tables.
+3. Step-by-step reasoning is logged in `answers_trace.json` (raw logs) and summarized in `evaluation.md` (human-readable tables).
 ---
 ## 🖥️ Demo Output
 
