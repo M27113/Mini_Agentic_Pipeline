@@ -103,7 +103,7 @@ Place 8–10 queries in queries.txt
 And place prompt versions v1,v2.. as .txt files in promots
 ```
   
-6. **Run the pipeline ▶️**
+6. **Run the pipeline**
 
 Default queries:
 
@@ -118,17 +118,17 @@ python main.py --queries-file queries.txt --prompt-version v2
 
 ## 🛠️ Design Decisions
 
-1. Modular architecture: Retriever, Reasoner, Actor, Controller separated for maintainability.
+1. **Modular architecture**: Retriever, Reasoner, Actor, Controller separated for maintainability.
 
-2. LLM-driven decision-making: GPT-4o-mini chooses whether to use KB or external tool.
+2. **LLM-driven decision-making**: GPT-4o-mini chooses whether to use KB or external tool.
 
-3. External prompts: Stored in prompts/ folder for versioning.
+3. **External prompts**: Stored in prompts/ folder for versioning.
 
-4. Trace logging: All queries log retrieved docs, reasoning trace, tool usage, and latency in answers_trace.json.
+4. **Trace logging**: All queries log retrieved docs, reasoning trace, tool usage, and latency in answers_trace.json.
 
-5. Evaluation report: evaluation.md contains aligned tables, latencies, and quality notes.
+5. **Evaluation report**: evaluation.md contains aligned tables, latencies, and quality notes.
 
-6. Agentic Behavior: Decisions made dynamically per query, no fixed thresholds.
+6. **Agentic Behavior**: Decisions made dynamically per query, no fixed thresholds.
 
 
 ## 🖥️ Demo Output
