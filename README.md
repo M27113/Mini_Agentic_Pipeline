@@ -129,20 +129,16 @@ pip install -r requirements.txt
     --- answers_trace.json – full JSON with reasoning trace, action decisions, and latencies.
 
 ---
-## 🛠️ Design Decisions
+## 📌 Design Decisions
 
-1. **Modular architecture**: Retriever, Reasoner, Actor, Controller separated for maintainability.
+These choices were made to keep the pipeline **simple, explainable, and extensible** while meeting the assignment requirements.  
 
-2. **LLM-driven decision-making**: GPT-4o-mini chooses whether to use KB or external tool.
-
-3. **External prompts**: Stored in prompts/ folder for versioning.
-
-4. **Trace logging**: All queries log retrieved docs, reasoning trace, tool usage, and latency in answers_trace.json.
-
-5. **Evaluation report**: evaluation.md contains aligned tables, latencies, and quality notes.
-
-6. **Agentic Behavior**: Decisions made dynamically per query, no fixed thresholds.
-
+1. **Modular architecture** → Retriever, Reasoner, Actor, and Controller are separated into distinct components for clarity and maintainability.  
+2. **LLM-driven decision-making** → GPT-4o-mini decides dynamically whether to use the KB or the external Tavily tool.  
+3. **Versioned prompts** → Prompts are stored in the `prompts/` folder, making it easy to maintain and switch between versions.  
+4. **Structured trace logging** → Each query logs retrieved docs, reasoning trace, tool usage, and latency in `answers_trace.json`.  
+5. **Evaluation framework** → A dedicated `evaluation.md` provides clean tables with per-query latencies and qualitative notes.  
+6. **Agentic behavior** → The pipeline behaves like a lightweight agent, reasoning and acting per query rather than following static rules.  
 ---
 ## 📊 Evaluation
 
@@ -212,24 +208,14 @@ pip install -r requirements.txt
 ```
 ---
 ## ⚠️ Known Limitations
+- 🌐 **External API dependency** → Tavily API must be accessible; network failures are not retried automatically.  
+- 📚 **Limited KB size** → Optimized for a small knowledge base (8–20 documents).  
+- 🤖 **Query coverage** → The LLM may occasionally misclassify whether to use the KB or the tool.  
+- ⏳ **No caching** → Tool results are fetched on every run; caching could reduce latency.  
 
--- External API dependency: Tavily API must be accessible; network failures are not retried automatically.
-
--- Limited KB size: Works best with small KB (8–20 documents).
-
--- Query coverage: LLM may occasionally misclassify whether to use KB vs tool.
-
--- No caching: Tool results are fetched on every run; caching could reduce latency.
-
----
 ## 🚀 Future Enhancements
-
--- Add unit tests for Retriever and Reasoner.
-
--- Implement retry logic and caching for tool/API calls.
-
--- Extend to multiple tools (CSV lookup, REST API).
-
--- Interactive CLI for live queries and optional debugging.
-
+- 🧪 Add **unit tests** for Retriever and Reasoner.  
+- ♻️ Implement **retry logic and caching** for tool/API calls.  
+- 🔧 Extend to support **multiple tools** (e.g., CSV lookup, REST API).  
+- 💻 Provide an **interactive CLI** for live queries and optional debugging.  
 ---
