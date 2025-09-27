@@ -16,9 +16,9 @@ The system demonstrates **agentic behavior**, dynamically deciding whether to us
 ## Pipeline Architecture
 
 ```bash
-+-----------+     +--------------------+     +--------------------+     +-----------+     +------------+
++-----------+     +--------------------+     +--------------------+     +-----------+     +-------------+
 | User Query| --> |     Retriever      | --> |     Reasoner       | --> |    KB     | --> | Final Answer|
-+-----------+     |  (FAISS + KB docs) |     | (LLM decides: KB   |     +-----------+     +------------+
++-----------+     |  (FAISS + KB docs) |     | (LLM decides: KB   |     +-----------+     +-------------+
                   +--------------------+     |  or Tavily Tool)   |
                                              +---------+----------+
                                                        |
