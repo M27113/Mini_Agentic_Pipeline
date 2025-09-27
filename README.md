@@ -42,8 +42,9 @@ The system demonstrates **agentic behavior**, dynamically deciding whether to us
 3. **Reasoner** 🧠: GPT-4o-mini reads KB context and decides **KB or Tool**.  
 4. **KB** 📚: Used directly if Reasoner decides KB is sufficient.  
 5. **Actor** 🌐: Tavily web search executed if Reasoner decides KB is insufficient.  
-6. **Final Answer** ✅: Generated and returned to user.  
-7. **Trace Log** 📝: Step-by-step reasoning, tool calls, and latency logged in `answers_trace.json` and `evaluation.md`.  
+6. **Final Answer** ✅: Generated and returned to user.
+7. **Trace Log** 📝: Step-by-step reasoning, tool calls, and latency logged in `answers_trace.json` (raw logs) and summarized in `evaluation.md` (clean tables).  
+ 
 
 ---
 
@@ -103,7 +104,7 @@ pip install -r requirements.txt
 
 6. **Add prompts**
 
-    And place prompt versions v1,v2.. as .txt files in promots
+    And place prompt versions v1,v2.. as .txt files in prompts
 
 7. **Run the pipeline**
 
@@ -118,15 +119,15 @@ pip install -r requirements.txt
     ```bash
     python main.py --queries-file queries.txt --prompt-version v2
     ```
-    --- queries-file: Path to your queries file.
+    - queries-file: Path to your queries file.
     
-    --- prompt-version: Choose between v1 (basic) or v2 (expert) prompt.
+    - prompt-version: Choose between v1 (basic) or v2 (expert) prompt.
     
     **output**:
     
-    --- answers.txt – readable answers per query.
+    - answers.txt – readable answers per query.
     
-    --- answers_trace.json – full JSON with reasoning trace, action decisions, and latencies.
+    - answers_trace.json – full JSON with reasoning trace, action decisions, and latencies.
 
 ---
 ## 📌 Design Decisions
@@ -136,7 +137,7 @@ These choices were made to keep the pipeline **simple, explainable, and extensib
 1. **Modular architecture** → Retriever, Reasoner, Actor, and Controller are separated into distinct components for clarity and maintainability.  
 2. **LLM-driven decision-making** → GPT-4o-mini decides dynamically whether to use the KB or the external Tavily tool.  
 3. **Versioned prompts** → Prompts are stored in the `prompts/` folder, making it easy to maintain and switch between versions.  
-4. **Structured trace logging** → Each query logs retrieved docs, reasoning trace, tool usage, and latency in `answers_trace.json`.  
+4. **Structured trace logging** → Each query logs retrieved docs, reasoning trace, tool usage, and latency in `answers_trace.json` (raw logs), summarized in `evaluation.md` (clean tables).
 5. **Evaluation framework** → A dedicated `evaluation.md` provides clean tables with per-query latencies and qualitative notes.  
 6. **Agentic behavior** → The pipeline behaves like a lightweight agent, reasoning and acting per query rather than following static rules.  
 ---
@@ -146,17 +147,24 @@ These choices were made to keep the pipeline **simple, explainable, and extensib
 
 2. Metrics captured:
 
-    -- overall_latency
+    - overall_latency
 
-    -- tool_latency
+    - tool_latency
 
-    -- decision_text (action chosen)
+    - decision_text (action chosen)
 
-3. All metrics are stored in answers_trace.json for grading.
+3. All raw metrics are stored in answers_trace.json, while evaluation.md presents them in human-readable tables.
 ---
 ## 🖥️ Demo Output
 
+**Files Generated:**  
+- 📄 [answers.txt](answers.txt) – readable answers per query  
+- 📝 [answers_trace.json](answers_trace.json) – raw logs with reasoning, tool calls, and latencies  
+- 📊 [evaluation.md](evaluation.md) – summarized tables for easy grading
+
 ### Test Queries & Results
+
+> Full evaluation is summarized in [evaluation.md](evaluation.md).
 
 | Query                                                       | Decision Text    | Source Used | Latency (s) | Tool Latency (s) |
 |-------------------------------------------------------------|------------------|-------------|-------------|------------------|
@@ -181,6 +189,8 @@ These choices were made to keep the pipeline **simple, explainable, and extensib
 
 ---
 ### Step-by-step trace (from answers_trace.json):
+
+> The following snippet shows example entries from [answers_trace.json](answers_trace.json) (raw logs).
 
 ```bash
     {
