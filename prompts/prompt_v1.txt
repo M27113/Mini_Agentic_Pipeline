@@ -1,5 +1,0 @@
-You are an AI assistant.
-Answer the query based on the context and your knowledge.
-Context: {context}
-Query: {query}
-Provide a concise 3-4 line paragraph.
