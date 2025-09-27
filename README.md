@@ -133,28 +133,55 @@ python main.py --queries-file queries.txt --prompt-version v2
 
 ## 🖥️ Demo Output
 
-| Query                                     | Decision Text    | Source Used | Latency (s) | Tool Latency (s) |
-| ----------------------------------------- | ---------------- | ----------- | ----------- | ---------------- |
-| Explain RAG pipeline                      | `action: kb`     | KB          | 4.10        | -                |
-| Latest AI research in education           | `action: tavily` | Tavily      | 4.85        | 2.02             |
-| Benefits of using embeddings              | `action: tavily` | Tavily      | 6.37        | 2.26             |
-| What is FAISS in vector search?           | `action: tavily` | Tavily      | 5.28        | 1.95             |
-| When to use web search vs knowledge base? | `action: tavily` | Tavily      | 5.01        | 1.73             |
+### Test Queries & Results
 
-## Step-by-step trace (from answers_trace.json):
+| Query                                                       | Decision Text    | Source Used | Latency (s) | Tool Latency (s) |
+|-------------------------------------------------------------|------------------|-------------|-------------|------------------|
+| Explain RAG                                                 | `action: kb`     | KB          | 4.85        | -                |
+| What are chatbots?                                          | `action: kb`     | KB          | 2.79        | -                |
+| Explain about AI Ethics                                     | `action: kb`     | KB          | 3.37        | -                |
+| How does FAISS help in similarity search?                   | `action: tavily` | Tavily      | 5.21        | 2.37             |
+| Describe AI applications in healthcare                      | `action: kb`     | KB          | 3.20        | -                |
+| What is the role of automation tools like N8N in workflows? | `action: kb`     | KB          | 3.38        | -                |
+| Who won the Nobel Prize in Physics 2024?                    | `action: tavily` | Tavily      | 5.51        | 2.65             |
+| Current price of Tesla stock                                | `action: tavily` | Tavily      | 4.31        | 1.88             |
+| What are some popular Python libraries for NLP?             | `action: kb`     | KB          | 2.58        | -                |
+| Upcoming AI conferences worldwide                           | `action: tavily` | Tavily      | 5.27        | 2.25             |
+
+---
+
+### Latency Summary
+- **Average Latency:** 4.05s
+- **Average Tool Latency:** 2.29s
+- **KB Used:** 6 times
+- **Web Search Used:** 4 times
+
+---
+### Step-by-step trace (from answers_trace.json):
 
 ```bash
-{
-  "query": "Explain RAG pipeline",
-  "answer": "Retrieval Augmented Generation (RAG) combines vector search with LLMs...",
-  "reasoning_trace": {
-    "prompt_version": "v2",
-    "used": "KB",
-    "decision_text": "action: kb"
-  },
-  "latency": 4.098,
-  "tool_latency": null
-}
+    {
+        "query": "Explain about AI Ethics",
+        "answer": "AI Ethics is a critical field that addresses the responsible development and deployment of artificial intelligence. Key principles include fairness, transparency, accountability, privacy, and avoiding bias in AI systems. Ensuring that AI models do not discriminate against individuals or groups is essential for trust and societal acceptance.\n\nTransparency involves explaining AI decisions in a way humans can understand. Accountability ensures that developers and organizations take responsibility...",
+        "reasoning_trace": {
+            "prompt_version": "v2",
+            "used": "KB",
+            "decision_text": "action: kb"
+        },
+        "latency": 3.3738651275634766,
+        "tool_latency": null
+    },
+    {
+        "query": "How does FAISS help in similarity search?",
+        "answer": "Faiss is an open-source library designed for efficient similarity search and clustering of dense vectors, enabling applications like recommendation systems and image search. Faiss, short for Facebook AI Similarity Search, is an open-source library built for similarity search and clustering of dense vectors. These methods help Faiss organize and retrieve vectors efficiently, ensuring similarity searches are quick and accurate. Faiss also powers search engines that retrieve visually similar...",
+        "reasoning_trace": {
+            "prompt_version": "v2",
+            "used": "Tavily",
+            "decision_text": "action: tavily"
+        },
+        "latency": 5.209009647369385,
+        "tool_latency": 2.369060754776001
+    }
 ```
 ## ⚠️ Known Limitations
 
