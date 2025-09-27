@@ -1,0 +1,52 @@
+--- Query 1: Explain RAG ---
+Answer: RAG can be applied in multiple domains, including customer support, research summarization, healthcare, and finance. It enables AI agents to answer queries about domain-specific documents, such as reports, papers, or knowledge articles. By combining retrieval and generation, RAG systems offer both flexibility and reliability.
+
+Advantages of RAG include improved factual accuracy, scalability to large knowledge bases, and the ability to update knowledge dynamically without retraining the model....
+(used: KB, latency: 5.78s)
+
+--- Query 2: What are chatbots? ---
+Answer: Chatbots are AI-powered programs designed to simulate human conversation and assist users with tasks or information. They are widely used in customer support, e-commerce, healthcare, education, and entertainment. Chatbots can operate through messaging platforms, websites, or voice interfaces, providing instant responses to user queries and automating repetitive interactions.
+
+Modern chatbots leverage Natural Language Processing (NLP) to understand user intent, extract entities, and generate...
+(used: KB, latency: 4.95s)
+
+--- Query 3: Explain about AI Ethics ---
+Answer: AI Ethics is a critical field that addresses the responsible development and deployment of artificial intelligence. Key principles include fairness, transparency, accountability, privacy, and avoiding bias in AI systems. Ensuring that AI models do not discriminate against individuals or groups is essential for trust and societal acceptance.
+
+Transparency involves explaining AI decisions in a way humans can understand. Accountability ensures that developers and organizations take responsibility...
+(used: KB, latency: 5.66s)
+
+--- Query 4: How does FAISS help in similarity search? ---
+Answer: Faiss is an open-source library designed for efficient similarity search and clustering of dense vectors, enabling applications like recommendation systems and image search. Faiss, short for Facebook AI Similarity Search, is an open-source library built for similarity search and clustering of dense vectors. These methods help Faiss organize and retrieve vectors efficiently, ensuring similarity searches are quick and accurate. Faiss also powers search engines that retrieve visually similar...
+(used: Tavily, latency: 5.04s)
+
+--- Query 5: Describe AI applications in healthcare ---
+Answer: AI is revolutionizing healthcare by improving diagnostics, patient monitoring, drug discovery, and administrative workflows. Machine learning algorithms analyze medical images, electronic health records, and clinical data to support doctors in making accurate diagnoses and treatment plans. Predictive models can anticipate disease progression, allowing early intervention and personalized care.
+
+Natural language processing (NLP) helps summarize patient notes, extract relevant insights, and...
+(used: KB, latency: 4.22s)
+
+--- Query 6: What is the role of automation tools like N8N in workflows? ---
+Answer: Automation tools like N8N, Make.com, and Zapier enable users to integrate multiple applications and automate workflows without extensive coding knowledge. They help organizations automate repetitive tasks such as data entry, notifications, report generation, and email handling. By connecting APIs, databases, and apps, these tools streamline business operations and reduce human error.
+
+N8N is an open-source workflow automation tool that provides a visual interface to create complex workflows....
+(used: KB, latency: 2.95s)
+
+--- Query 7: Who won the Nobel Prize in Physics 2024? ---
+Answer: Skip to content  # Nobel Prize in Physics 2024 > The Nobel Prize in Physics 2024 was awarded jointly to John J. Hopfield and Geoffrey Hinton "for foundational discoveries and inventions that enable machine learning with artificial neural networks" ### Nobel Prize announcements 2025 ## Six days, six prizes This year’s Nobel Prize announcements will take place 6–13 October. All announcements will be streamed live here on nobelprize.org. See the full schedule ### Explore prizes and laureates Look...
+(used: Tavily, latency: 5.63s)
+
+--- Query 8: Current price of Tesla stock ---
+Answer: The current price of TSLA is 440.40 USD — it has increased by 2.31% in the past 24 hours. Watch Tesla, Inc. stock price performance more closely on the chart. Tesla traded at $440.40 this Friday September 26th, increasing $17.01 or 4.02 percent since the previous trading session. Looking back, over the last four weeks About Tesla (TSLA) ; Open. $428.30 ; Price / earnings ratio. 255.04x ; Yesterday's range. $421.02 - $440.47 ; Debt / equity. 16.99x ; 52 week range. $212.11 -
+(used: Tavily, latency: 5.09s)
+
+--- Query 9: What are some popular Python libraries for NLP? ---
+Answer: Natural Language Processing (NLP) is a branch of AI that focuses on the interaction between computers and human language. NLP enables machines to read, understand, and generate human language, supporting applications like chatbots, translation, sentiment analysis, and content summarization. Popular Python libraries for NLP include NLTK, SpaCy, Hugging Face Transformers, and Gensim.
+
+Tokenization, part-of-speech tagging, named entity recognition, and sentiment analysis are common NLP tasks....
+(used: KB, latency: 3.91s)
+
+--- Query 10: Upcoming AI conferences worldwide ---
+Answer: Top AI & ML Conferences to attend in 2025 & 2026 ; TechEx Europe. Sep 24-25. Amsterdam, Netherlands ; GAI World 2025. Sep 24-25. Boston, MA ; MLCon New York. Sep Global Summit 2025 ; 22 September 2025 · 16:00 - 17:00 · AI for early warnings addressing floods and droughts ; 23 September 2025 · 17:00 - 18:00 · AI for climate 1. Radar AI Edition · 2. The AI Conference San Francisco · 3. SuperAI · 4. Data + AI Summit · 5. The AI Summit London · 6. CDAO Government · 7. Ai4 2025 · 8. Coalesce.
+(used: Tavily, latency: 5.14s)
+
