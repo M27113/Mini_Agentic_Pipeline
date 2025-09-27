@@ -1,112 +1,112 @@
 [
     {
         "query": "Explain RAG",
-        "answer": "RAG can be applied in multiple domains, including customer support, research summarization, healthcare, and finance. It enables AI agents to answer queries about domain-specific documents, such as reports, papers, or knowledge articles. By combining retrieval and generation, RAG systems offer both flexibility and reliability.\n\nAdvantages of RAG include improved factual accuracy, scalability to large knowledge bases, and the ability to update knowledge dynamically without retraining the model....",
+        "answer": "RAG can be applied in multiple domains, including customer support, research summarization, healthcare, and finance. It enables AI agents to answer queries about domain-specific documents, such as reports, papers, or knowledge articles. By combining retrieval and generation, RAG systems offer both flexibility and reliability.\n\nAdvantages of RAG include improved factual accuracy, scalability to large knowledge bases, and the ability to update knowledge dynamically without retraining the model. Implementing RAG involves selecting an embedding model, designing a retrieval system, and integrating it with an LLM, creating an effective agentic system that reasons and retrieves in tandem. Retrieval-Augmented Generation (RAG) is a method that combines information retrieval with large language models (LLMs) to improve the accuracy and relevance of generated responses. Instead of relying solely on the knowledge encoded in the LLM, RAG retrieves relevant documents or data from a knowledge base (KB) and uses this context to generate informed answers.\n\nThe RAG workflow typically involves two main components: a retriever and a generator. The retriever searches a set of documents, vector embeddings, or a database to find content relevant to the userâ€™s query. These retrieved documents are then passed to the generator, often an LLM, which reasons over the context and produces a concise, accurate response. This reduces hallucinations and ensures the output is grounded in real information. In practical applications, AI agents are used for chatbots, virtual assistants, autonomous vehicles, trading bots, and workflow automation. They can retrieve information from knowledge bases, interact with APIs, execute tasks, and reason using LLMs. Integrating RAG with AI agents enables them to answer domain-specific questions accurately while deciding whether to use their internal knowledge or external tools.\n\nDesigning effective AI agents involves considerations like context awareness, error handling, transparency, and ethical behavior. Logging decisions, actions, and reasoning steps is essential for monitoring, evaluation, and improving agent performance. By combining retrieval, reasoning, and action execution, AI agents form the foundation of intelligent, autonomous systems in many domains.",
         "reasoning_trace": {
             "prompt_version": "v2",
             "used": "KB",
             "decision_text": "action: kb"
         },
-        "latency": 4.850298643112183,
+        "latency": 5.7755961418151855,
         "tool_latency": null
     },
     {
         "query": "What are chatbots?",
-        "answer": "Chatbots are AI-powered programs designed to simulate human conversation and assist users with tasks or information. They are widely used in customer support, e-commerce, healthcare, education, and entertainment. Chatbots can operate through messaging platforms, websites, or voice interfaces, providing instant responses to user queries and automating repetitive interactions.\n\nModern chatbots leverage Natural Language Processing (NLP) to understand user intent, extract entities, and generate...",
+        "answer": "Chatbots are AI-powered programs designed to simulate human conversation and assist users with tasks or information. They are widely used in customer support, e-commerce, healthcare, education, and entertainment. Chatbots can operate through messaging platforms, websites, or voice interfaces, providing instant responses to user queries and automating repetitive interactions.\n\nModern chatbots leverage Natural Language Processing (NLP) to understand user intent, extract entities, and generate contextually appropriate responses. Rule-based chatbots follow predefined scripts, while AI-driven chatbots, powered by machine learning and large language models like GPT, can handle more complex, free-form queries. They can summarize documents, provide recommendations, and even simulate natural conversation. In customer service, chatbots reduce workload by answering FAQs, guiding users through processes, and escalating complex issues to human agents. In healthcare, they assist with symptom checking, appointment scheduling, and patient education. Educational chatbots can provide tutoring, answer subject-related questions, and personalize learning experiences.\n\nDeploying chatbots effectively requires attention to usability, conversational design, and ethical considerations. Privacy and data security are critical, especially when handling sensitive user information. Continuous training and feedback loops improve chatbot accuracy and user satisfaction. By combining AI reasoning with automation, chatbots are becoming essential tools for improving efficiency, engagement, and accessibility across multiple domains. AI agents are being used in chatbots, virtual assistants, and customer support systems. They can answer domain-specific questions, summarize documents, and automate repetitive tasks. Ethical AI and explainable AI are growing areas of research to ensure fairness, transparency, and accountability. As AI continues to evolve, integrating these models responsibly with human expertise can improve decision-making, reduce manual workloads, and enable innovative applications across industries.",
         "reasoning_trace": {
             "prompt_version": "v2",
             "used": "KB",
             "decision_text": "action: kb"
         },
-        "latency": 2.7870261669158936,
+        "latency": 4.948649644851685,
         "tool_latency": null
     },
     {
         "query": "Explain about AI Ethics",
-        "answer": "AI Ethics is a critical field that addresses the responsible development and deployment of artificial intelligence. Key principles include fairness, transparency, accountability, privacy, and avoiding bias in AI systems. Ensuring that AI models do not discriminate against individuals or groups is essential for trust and societal acceptance.\n\nTransparency involves explaining AI decisions in a way humans can understand. Accountability ensures that developers and organizations take responsibility...",
+        "answer": "AI Ethics is a critical field that addresses the responsible development and deployment of artificial intelligence. Key principles include fairness, transparency, accountability, privacy, and avoiding bias in AI systems. Ensuring that AI models do not discriminate against individuals or groups is essential for trust and societal acceptance.\n\nTransparency involves explaining AI decisions in a way humans can understand. Accountability ensures that developers and organizations take responsibility for AI outcomes. Privacy safeguards sensitive data, particularly in domains like healthcare and finance. Ethical AI guidelines recommend rigorous testing, auditing, and monitoring to mitigate unintended consequences. AI ethics also considers the environmental impact of training large models, data security, and the societal implications of automation. By embedding ethical principles into AI systems, organizations can maximize benefits while minimizing risks. Educating developers, policymakers, and the public about AI ethics is vital to ensure that AI technologies are aligned with human values and societal goals. AI agents are being used in chatbots, virtual assistants, and customer support systems. They can answer domain-specific questions, summarize documents, and automate repetitive tasks. Ethical AI and explainable AI are growing areas of research to ensure fairness, transparency, and accountability. As AI continues to evolve, integrating these models responsibly with human expertise can improve decision-making, reduce manual workloads, and enable innovative applications across industries.",
         "reasoning_trace": {
             "prompt_version": "v2",
             "used": "KB",
             "decision_text": "action: kb"
         },
-        "latency": 3.3738651275634766,
+        "latency": 5.6587114334106445,
         "tool_latency": null
     },
     {
         "query": "How does FAISS help in similarity search?",
-        "answer": "Faiss is an open-source library designed for efficient similarity search and clustering of dense vectors, enabling applications like recommendation systems and image search. Faiss, short for Facebook AI Similarity Search, is an open-source library built for similarity search and clustering of dense vectors. These methods help Faiss organize and retrieve vectors efficiently, ensuring similarity searches are quick and accurate. Faiss also powers search engines that retrieve visually similar...",
+        "answer": "Faiss is an open-source library designed for efficient similarity search and clustering of dense vectors, enabling applications like recommendation systems and image search. Faiss, short for Facebook AI Similarity Search, is an open-source library built for similarity search and clustering of dense vectors. These methods help Faiss organize and retrieve vectors efficiently, ensuring similarity searches are quick and accurate. Faiss also powers search engines that retrieve visually similar images...",
         "reasoning_trace": {
             "prompt_version": "v2",
             "used": "Tavily",
             "decision_text": "action: tavily"
         },
-        "latency": 5.209009647369385,
-        "tool_latency": 2.369060754776001
+        "latency": 5.044575452804565,
+        "tool_latency": 2.0525825023651123
     },
     {
         "query": "Describe AI applications in healthcare",
-        "answer": "AI is revolutionizing healthcare by improving diagnostics, patient monitoring, drug discovery, and administrative workflows. Machine learning algorithms analyze medical images, electronic health records, and clinical data to support doctors in making accurate diagnoses and treatment plans. Predictive models can anticipate disease progression, allowing early intervention and personalized care.\n\nNatural language processing (NLP) helps summarize patient notes, extract relevant insights, and...",
+        "answer": "AI is revolutionizing healthcare by improving diagnostics, patient monitoring, drug discovery, and administrative workflows. Machine learning algorithms analyze medical images, electronic health records, and clinical data to support doctors in making accurate diagnoses and treatment plans. Predictive models can anticipate disease progression, allowing early intervention and personalized care.\n\nNatural language processing (NLP) helps summarize patient notes, extract relevant insights, and automate documentation. AI-powered virtual assistants manage appointments, reminders, and patient queries, reducing workload for healthcare staff. Telemedicine platforms integrated with AI enhance accessibility and provide personalized treatment recommendations remotely. AI also accelerates drug discovery by simulating molecular interactions and predicting compound effectiveness, reducing time and cost for new medications. Ethical considerations such as patient privacy, transparency, and bias mitigation are essential in deploying AI systems responsibly. With continuous research and improvement, AI-driven healthcare applications are increasingly accurate, efficient, and impactful in improving patient outcomes. Artificial Intelligence (AI) is the simulation of human intelligence in machines that can learn, reason, and perform tasks traditionally requiring human intelligence. AI is widely used in various domains, including healthcare, education, finance, and scientific research. Recent advancements in AI models such as GPT-4 and GPT-5 allow machines to generate human-like text, summarize information, answer complex queries, and provide personalized recommendations.\n\nIn research, AI models process large datasets to detect patterns, make predictions, and generate insights. Techniques like natural language processing (NLP), computer vision, reinforcement learning, and self-supervised learning enable machines to perform complex tasks efficiently. Multimodal learning combines different types of data such as text, images, and audio, enhancing AIâ€™s understanding of real-world contexts.",
         "reasoning_trace": {
             "prompt_version": "v2",
             "used": "KB",
             "decision_text": "action: kb"
         },
-        "latency": 3.1979715824127197,
+        "latency": 4.220355272293091,
         "tool_latency": null
     },
     {
         "query": "What is the role of automation tools like N8N in workflows?",
-        "answer": "Automation tools like N8N, Make.com, and Zapier enable users to integrate multiple applications and automate workflows without extensive coding knowledge. They help organizations automate repetitive tasks such as data entry, notifications, report generation, and email handling. By connecting APIs, databases, and apps, these tools streamline business operations and reduce human error.\n\nN8N is an open-source workflow automation tool that provides a visual interface to create complex workflows....",
+        "answer": "Automation tools like N8N, Make.com, and Zapier enable users to integrate multiple applications and automate workflows without extensive coding knowledge. They help organizations automate repetitive tasks such as data entry, notifications, report generation, and email handling. By connecting APIs, databases, and apps, these tools streamline business operations and reduce human error.\n\nN8N is an open-source workflow automation tool that provides a visual interface to create complex workflows. Users can design multi-step processes with triggers, actions, and conditions. Make.com and Zapier offer prebuilt integrations and templates for commonly used tasks, allowing users to deploy workflows quickly without programming expertise. Integrating AI agents with automation tools creates powerful agentic systems capable of performing multi-step tasks, retrieving data from multiple sources, and executing actions based on LLM reasoning. These systems reduce manual effort, improve efficiency, and enable faster decision-making. As AI and automation continue to advance, businesses can implement intelligent workflows that combine reasoning, action, and monitoring to solve real-world problems effectively. NLP is widely used in industries like customer support, healthcare, marketing, and finance. Applications include automated email responses, summarizing large documents, extracting insights from social media, and powering virtual assistants. Combining NLP with other AI techniques enhances the capabilities of intelligent systems and enables real-time, context-aware decision-making.",
         "reasoning_trace": {
             "prompt_version": "v2",
             "used": "KB",
             "decision_text": "action: kb"
         },
-        "latency": 3.377958059310913,
+        "latency": 2.948992967605591,
         "tool_latency": null
     },
     {
         "query": "Who won the Nobel Prize in Physics 2024?",
-        "answer": "Skip to content  # Nobel Prize in Physics 2024 > The Nobel Prize in Physics 2024 was awarded jointly to John J. Hopfield and Geoffrey Hinton \"for foundational discoveries and inventions that enable machine learning with artificial neural networks\" ### Nobel Prize announcements 2025 ## Six days, six prizes This year’s Nobel Prize announcements will take place 6–13 October. All announcements will be streamed live here on nobelprize.org. See the full schedule ### Explore prizes and laureates Look...",
+        "answer": "Skip to content  # Nobel Prize in Physics 2024 > The Nobel Prize in Physics 2024 was awarded jointly to John J. Hopfield and Geoffrey Hinton \"for foundational discoveries and inventions that enable machine learning with artificial neural networks\" ### Nobel Prize announcements 2025 ## Six days, six prizes This year’s Nobel Prize announcements will take place 6–13 October. All announcements will be streamed live here on nobelprize.org. See the full schedule ### Explore prizes and laureates Look f...",
         "reasoning_trace": {
             "prompt_version": "v2",
             "used": "Tavily",
             "decision_text": "action: tavily"
         },
-        "latency": 5.509877443313599,
-        "tool_latency": 2.6470727920532227
+        "latency": 5.628853797912598,
+        "tool_latency": 2.6397650241851807
     },
     {
         "query": "Current price of Tesla stock",
-        "answer": "The current price of TSLA is 440.40 USD — it has increased by 2.31% in the past 24 hours. Watch Tesla, Inc. stock price performance more closely on the chart. Common Stock (TSLA) stock price today is $439.89, reflecting a +3.89% move since the market opened. The company's market capitalization stands at $1.46T, with a The current price of TSLA is ‎$‎440.40. What is Tesla Motors, Inc.'s stock future price target? +.",
+        "answer": "The current price of TSLA is 440.40 USD — it has increased by 2.31% in the past 24 hours. Watch Tesla, Inc. stock price performance more closely on the chart. Tesla traded at $440.40 this Friday September 26th, increasing $17.01 or 4.02 percent since the previous trading session. Looking back, over the last four weeks About Tesla (TSLA) ; Open. $428.30 ; Price / earnings ratio. 255.04x ; Yesterday's range. $421.02 - $440.47 ; Debt / equity. 16.99x ; 52 week range. $212.11 -",
         "reasoning_trace": {
             "prompt_version": "v2",
             "used": "Tavily",
             "decision_text": "action: tavily"
         },
-        "latency": 4.311624526977539,
-        "tool_latency": 1.8801236152648926
+        "latency": 5.093107223510742,
+        "tool_latency": 2.4708526134490967
     },
     {
         "query": "What are some popular Python libraries for NLP?",
-        "answer": "Natural Language Processing (NLP) is a branch of AI that focuses on the interaction between computers and human language. NLP enables machines to read, understand, and generate human language, supporting applications like chatbots, translation, sentiment analysis, and content summarization. Popular Python libraries for NLP include NLTK, SpaCy, Hugging Face Transformers, and Gensim.\n\nTokenization, part-of-speech tagging, named entity recognition, and sentiment analysis are common NLP tasks....",
+        "answer": "Natural Language Processing (NLP) is a branch of AI that focuses on the interaction between computers and human language. NLP enables machines to read, understand, and generate human language, supporting applications like chatbots, translation, sentiment analysis, and content summarization. Popular Python libraries for NLP include NLTK, SpaCy, Hugging Face Transformers, and Gensim.\n\nTokenization, part-of-speech tagging, named entity recognition, and sentiment analysis are common NLP tasks. Machine learning and deep learning models, such as BERT and GPT, allow for advanced language understanding and generation. Text preprocessing, including cleaning, lemmatization, and stopword removal, ensures high-quality input for models. NLP is widely used in industries like customer support, healthcare, marketing, and finance. Applications include automated email responses, summarizing large documents, extracting insights from social media, and powering virtual assistants. Combining NLP with other AI techniques enhances the capabilities of intelligent systems and enables real-time, context-aware decision-making. Data Science is the interdisciplinary field of extracting knowledge and insights from structured and unstructured data. It combines statistics, programming, and domain expertise to make data-driven decisions. Python and R are the most popular languages in data science, offering libraries for analysis, machine learning, and visualization. SQL is commonly used for querying relational databases, while tools like Tableau, Power BI, and Excel are used for reporting and dashboards.\n\nThe data science workflow typically involves data collection, cleaning, exploration, modeling, and evaluation. Preprocessing ensures high-quality input data, while feature engineering, selection, and transformation improve model accuracy. Common tasks include predictive modeling, regression, classification, clustering, and anomaly detection. Visualization is used to communicate results effectively to stakeholders, enabling actionable insights.",
         "reasoning_trace": {
             "prompt_version": "v2",
             "used": "KB",
             "decision_text": "action: kb"
         },
-        "latency": 2.5806500911712646,
+        "latency": 3.9058005809783936,
         "tool_latency": null
     },
     {
         "query": "Upcoming AI conferences worldwide",
-        "answer": "Top AI & ML Conferences to attend in 2025 & 2026 ;TechEx Europe. Sep 24-25. Amsterdam, Netherlands; GAI World 2025. Sep 24-25. Boston, MA ; MLCon New York. Sep Global Summit 2025; 22 September 2025 · 16:00 - 17:00 · AI for early warnings addressing floods and droughts ; 23 September 2025 · 17:00 - 18:00 · AI for climate 1. Radar AI Edition· 2. The AI Conference San Francisco · 3. SuperAI · 4. Data + AI Summit · 5. The AI Summit London · 6. CDAO Government · 7. Ai4 2025 · 8. Coalesce.",
+        "answer": "Top AI & ML Conferences to attend in 2025 & 2026 ; TechEx Europe. Sep 24-25. Amsterdam, Netherlands ; GAI World 2025. Sep 24-25. Boston, MA ; MLCon New York. Sep Global Summit 2025 ; 22 September 2025 · 16:00 - 17:00 · AI for early warnings addressing floods and droughts ; 23 September 2025 · 17:00 - 18:00 · AI for climate 1. Radar AI Edition · 2. The AI Conference San Francisco · 3. SuperAI · 4. Data + AI Summit · 5. The AI Summit London · 6. CDAO Government · 7. Ai4 2025 · 8. Coalesce.",
         "reasoning_trace": {
             "prompt_version": "v2",
             "used": "Tavily",
             "decision_text": "action: tavily"
         },
-        "latency": 5.269407033920288,
-        "tool_latency": 2.2488083839416504
+        "latency": 5.139878273010254,
+        "tool_latency": 1.9860916137695312
     }
 ]
