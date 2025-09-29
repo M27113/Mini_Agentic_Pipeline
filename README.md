@@ -75,8 +75,8 @@ mini_agentic_pipeline/
 
 1. **Clone the repository**
 ```bash
-git clone <your-repo-url>
-cd mini_agentic_pipeline
+git clone https://github.com/M27113/Mini_Agentic_Pipeline.git
+cd Mini_Agentic_Pipeline
 ```
 2. **Create a virtual environment & install dependencies**
 
