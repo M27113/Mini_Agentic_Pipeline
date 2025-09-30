@@ -100,7 +100,7 @@ pip install -r requirements.txt
 5. **Add test queries in queries.txt**.
 
     (1 query per line, 10 queries recommended)
-    Place 8–10 queries in queries.txt
+    Place 8–12 queries in queries.txt
 
 6. **Add prompts**
 
