@@ -104,7 +104,7 @@ pip install -r requirements.txt
 
 6. **Add prompts**
 
-    And place prompt versions v1,v2.. as .txt files in prompts
+    Place prompt versions v1,v2.. as .txt files in prompts/.
 
 7. **Run the pipeline**
 
