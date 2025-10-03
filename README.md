@@ -191,9 +191,7 @@ pip install -r requirements.txt
 **Notes**:
 
 - Multiple queries can be sent in one request.
-
 - truncate flag controls truncated vs full answers.
-
 - Answers are saved automatically in `answers.txt` and `answers_trace.json`.
 
 ---
