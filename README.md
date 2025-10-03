@@ -1,5 +1,7 @@
 #   🤖 Mini Agentic Pipeline ✨
 
+A modular AI agent pipeline with KB retrieval, LLM reasoning, and Tavily integration, exposed via Flask REST API.
+
 ## **Overview**
 
 The **Mini Agentic Pipeline** is a modular AI system that:  
@@ -16,23 +18,50 @@ The system demonstrates **agentic behavior**, dynamically deciding whether to us
 ## Pipeline Architecture
 
 ```bash
-+-----------+     +--------------------+     +--------------------+     +-----------+     +-------------+
-| User Query| --> |     Retriever      | --> |     Reasoner       | --> |    KB     | --> | Final Answer|
-+-----------+     |  (FAISS + KB docs) |     | (LLM decides: KB   |     +-----------+     +-------------+
-                  +--------------------+     |  or Tavily Tool)   |
-                                             +---------+----------+
-                                                       |
-                                                       v
-                                             +--------------------+
-                                             |      Actor         |
-                                             | (Tavily Web Search)|
-                                             +--------------------+
-                                                       |
-                                                       v
-                                             +--------------------+
-                                             |    Trace Log       |
-                                             | answers_trace.json |
-                                             +--------------------+
+                ┌────────────────────┐
+                │   User Query Input │
+                └─────────┬──────────┘
+                          │  (query)
+                          ▼
+                ┌────────────────────┐
+                │     Controller     │
+                │   (Orchestrator)   │
+                └─────────┬──────────┘
+                          │ passes query
+          ┌───────────────┴────────────────┐
+          │                                │
+          ▼                                ▼
+┌────────────────────┐           ┌────────────────────┐
+│     Retriever      │           │     Reasoner       │
+│ (Vector Store +    │           │ (LLM + Prompts)    │
+│ Embeddings Search) │           └─────────┬──────────┘
+└─────────┬──────────┘                     │
+          │ docs context                   │ decides action
+          └───────────────────────────────►│
+                                           │
+                                ┌──────────┴─────────┐
+                                │   Decide Action    │
+                                │ (KB vs Tool call)  │
+                                └──────────┬─────────┘
+                                           │
+                     ┌─────────────────────┴─────────────────────┐
+                     │                                           │
+                     ▼                                           ▼
+         ┌────────────────────┐                       ┌────────────────────┐
+         │ KB Answer          │                       │  Actor (Tool Call) │
+         │ (Context Summary)  │                       │  (Tavily Web API)  │
+         └─────────┬──────────┘                       └─────────┬──────────┘
+                   │                                            │  (tool results)
+                   └──────────────────────┬─────────────────────┘
+                                          │
+                                          ▼
+                              ┌────────────────────────┐
+                              │ Final Answer + Logs    │
+                              │ - reasoning trace      │
+                              │ - KB/Tool decision     │
+                              │ - latency per step     │
+                              └────────────────────────┘
+
 
 ```
 ### **Flow Explanation**
@@ -45,7 +74,6 @@ The system demonstrates **agentic behavior**, dynamically deciding whether to us
 6. **Final Answer** ✅: Generated and returned to user.
 7. **Trace Log** 📝: Step-by-step reasoning, tool calls, and latency logged in `answers_trace.json` (raw logs) and summarized in `evaluation.md` (clean tables).  
  
-
 ---
 
 ## 🧩 Project Structure
@@ -62,12 +90,12 @@ mini_agentic_pipeline/
 ├─ answers_trace.json        # Step-by-step trace log
 ├─ answers.txt               # Final answers per query        
 ├─ evaluation.md             # Automated evaluation report
-├─ generate_eval.py  
+├─ generate_eval.py
 ├─ main.py                   # Entry point for running queries
+├─ app.py                    # Flask REST API endpoint
 ├─ requirements.txt          # Python dependencies
 ├─ .env                      # API keys (OpenAI, Tavily)
 └─ README.md                 # Documentation
-
 ```
 ---
 
@@ -128,6 +156,35 @@ pip install -r requirements.txt
     - answers.txt – readable answers per query.
     
     - answers_trace.json – full JSON with reasoning trace, action decisions, and latencies.
+
+    iii) Flask REST API
+     ```bash
+      # Set FLASK_APP environment variable (Windows CMD)
+      set FLASK_APP=app.py
+      # Run Flask
+      flask run
+     ```
+    **Example POST request (PowerShell):**
+     ```bash
+      $body = @{
+          "queries" = @(
+              "Latest research on AI in education",
+              "Benefits of AI in healthcare"
+          )
+          "truncate" = $true
+      } | ConvertTo-Json
+      
+      $headers = @{ "Content-Type" = "application/json" }
+      
+      Invoke-WebRequest -Uri http://127.0.0.1:5000/query -Method POST -Headers $headers -Body $body
+                
+**Notes**:
+
+- Multiple queries can be sent in one request.
+
+- truncate flag controls truncated vs full answers.
+
+- Answers are saved automatically in answers.txt and answers_trace.json.
 
 ---
 ## 📌 Design Decisions
@@ -239,11 +296,52 @@ Answer: Chatbots are AI systems designed to interact with users through text or 
 - 🌐 **External API dependency** → Tavily API must be accessible; network failures are not retried automatically.  
 - 📚 **Limited KB size** → Optimized for a small knowledge base (8–20 documents).  
 - 🤖 **Query coverage** → The LLM may occasionally misclassify whether to use the KB or the tool.  
-- ⏳ **No caching** → Tool results are fetched on every run; caching could reduce latency.  
+- ⏳ **No caching** → Tool results are fetched on every run; caching could reduce latency.
+
+## 🚀 Recent Improvements
+
+**1. Enhanced Error Handling**
+  
+    - sys.exit(1) for critical failures
+    
+    - Validates .env keys and KB folder
+    
+    - Wrapped pipeline in try/except blocks with user-friendly messages
+
+**2. Caching Implemented**
+
+    - Reasoner: caches (query, context) outputs
+    
+    - Actor: caches web search results
+    
+    - Retriever: caches vector search results
+
+**3. Rate Limit Handling**
+  
+    - Retry logic for OpenAI RateLimitError
+    
+    - Prevents abrupt terminations
+
+**4. Flask REST API**
+
+    - `/query` POST endpoint supporting multiple queries with optional truncation.  
+    
+    - Returns answers + full reasoning trace in JSON.  
+    
+    - CORS enabled; console logs only query & answer. 
+    
+    - **Use-case:** Integrate pipeline with other services or frontend apps.
+
+## ✅ Summary of Focus
+  - **Robustness:** better error handling & retries  
+  - **Efficiency:** caching repeated queries reduces latency  
+  - **Accessibility:** Flask API for external integrations  
+  - **Maintainability:** modular, structured logging and clear improvements
+
 
 ## 🚀 Future Enhancements
 - 🧪 Add **unit tests** for Retriever and Reasoner.  
-- ♻️ Implement **retry logic and caching** for tool/API calls.  
+- ♻️ Implement **retry logic and caching** for all tool/API calls.  
 - 🔧 Extend to support **multiple tools** (e.g., CSV lookup, REST API).  
 - 💻 Provide an **interactive CLI** for live queries and optional debugging.  
 ---
