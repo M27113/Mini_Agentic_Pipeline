@@ -94,6 +94,7 @@ mini_agentic_pipeline/
 ├─ main.py                   # Entry point for running queries
 ├─ app.py                    # Flask REST API endpoint
 ├─ requirements.txt          # Python dependencies
+├─ queries.txt               # User queries 
 ├─ .env                      # API keys (OpenAI, Tavily)
 └─ README.md                 # Documentation
 ```
