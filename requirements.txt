@@ -1,9 +1,11 @@
 openai
-tavily
+tavily-python
 python-dotenv
 langchain-openai
 langchain-community
 faiss-cpu
+flask
+flask-cors
 
 
 
