@@ -313,35 +313,35 @@ Answer: Chatbots are AI systems designed to interact with users through text or 
 
 **1. Enhanced Error Handling**
   
-    - sys.exit(1) for critical failures
-    
-    - Validates .env keys and KB folder
-    
-    - Wrapped pipeline in try/except blocks with user-friendly messages
+  - sys.exit(1) for critical failures
+  
+  - Validates .env keys and KB folder
+  
+  - Wrapped pipeline in try/except blocks with user-friendly messages
 
 **2. Caching Implemented**
 
-    - Reasoner: caches (query, context) outputs
-    
-    - Actor: caches web search results
-    
-    - Retriever: caches vector search results
+  - Reasoner: caches (query, context) outputs
+  
+  - Actor: caches web search results
+  
+  - Retriever: caches vector search results
 
 **3. Rate Limit Handling**
+
+  - Retry logic for OpenAI RateLimitError
   
-    - Retry logic for OpenAI RateLimitError
-    
-    - Prevents abrupt terminations
+  - Prevents abrupt terminations
 
 **4. Flask REST API**
 
-    - `/query` POST endpoint supporting multiple queries with optional truncation.  
-    
-    - Returns answers + full reasoning trace in JSON.  
-    
-    - CORS enabled; console logs only query & answer. 
-    
-    - **Use-case:** Integrate pipeline with other services or frontend apps.
+  - `/query` POST endpoint supporting multiple queries with optional truncation.  
+  
+  - Returns answers + full reasoning trace in JSON.  
+  
+  - CORS enabled; console logs only query & answer. 
+  
+  - **Use-case:** Integrate pipeline with other services or frontend apps.
 
 ## ✅ Summary of Focus
   - **Robustness:** better error handling & retries  
