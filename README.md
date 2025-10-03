@@ -157,14 +157,24 @@ pip install -r requirements.txt
     
     - answers_trace.json – full JSON with reasoning trace, action decisions, and latencies.
 
-    iii) Flask REST API
+---
+
+## 🖥️ Getting Started with Flask API
+
+1. **Set environment variable and run Flask:**
+   
      ```bash
-      # Set FLASK_APP environment variable (Windows CMD)
+      # Windows CMD
       set FLASK_APP=app.py
-      # Run Flask
       flask run
+      
+      # Linux / Mac
+      export FLASK_APP=app.py
+      flask run
+
      ```
-    **Example POST request (PowerShell):**
+2. **Example POST request (PowerShell):**
+   
      ```bash
       $body = @{
           "queries" = @(
@@ -184,9 +194,10 @@ pip install -r requirements.txt
 
 - truncate flag controls truncated vs full answers.
 
-- Answers are saved automatically in answers.txt and answers_trace.json.
+- Answers are saved automatically in `answers.txt` and `answers_trace.json`.
 
 ---
+
 ## 📌 Design Decisions
 
 These choices were made to keep the pipeline **simple, explainable, and extensible** while meeting the assignment requirements.  
