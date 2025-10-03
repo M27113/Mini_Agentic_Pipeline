@@ -353,6 +353,6 @@ Answer: Chatbots are AI systems designed to interact with users through text or 
 ## 🚀 Future Enhancements
 - 🧪 Add **unit tests** for Retriever and Reasoner.  
 - ♻️ Implement **retry logic and caching** for all tool/API calls.  
-- 🔧 Extend to support **multiple tools** (e.g., CSV lookup, REST API).  
+- 🔧 Extend to support **multiple tools** (e.g., CSV lookup, other APIs).  
 - 💻 Provide an **interactive CLI** for live queries and optional debugging.  
 ---
